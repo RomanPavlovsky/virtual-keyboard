@@ -1,5 +1,4 @@
 export const keys = [
-  { id: "0", type: "esc", name: "Esc" },
   { id: "1", type: "multi-symbols", name: { 1: "~", 2: "`", 3: "Ё", 4: null } },
   { id: "2", type: "symbols", name: { 1: "!", 2: "1" } },
   { id: "3", type: "multi-symbols", name: { 1: "@", 2: "2", 3: null, 4: '"' } },
@@ -40,6 +39,7 @@ export const keys = [
     type: "multi-symbols",
     name: { 1: "|", 2: "\\", 3: "\\", 4: "/" },
   },
+  { id: "41", type: "del", name: "Del" },
   { id: "29", type: "caps", name: "CapsLock" },
   { id: "30", type: "letters", name: { en: "A", ru: "Ф" } },
   { id: "31", type: "letters", name: { en: "S", ru: "Ы" } },
@@ -61,7 +61,6 @@ export const keys = [
     name: { 1: '"', 2: "'", 3: "Э", 4: null },
   },
 
-  { id: "41", type: "del", name: "Del" },
   { id: "42", type: "enter", name: "Enter" },
   { id: "43", type: "shift-left", name: "Shift" },
   { id: "44", type: "letters", name: { en: "Z", ru: "Я" } },
@@ -86,7 +85,7 @@ export const keys = [
     type: "multi-symbols",
     name: { 1: "?", 2: "/", 3: ",", 4: "." },
   },
-  { id: "54", type: "up", name: "↑" },
+  { id: "54", type: "up", name: "" },
   { id: "55", type: "shift-right", name: "Shift" },
   { id: "56", type: "ctrl-left", name: "Ctrl" },
   { id: "57", type: "win", name: "" },
@@ -94,8 +93,8 @@ export const keys = [
   { id: "59", type: "space", name: "" },
   { id: "60", type: "alt", name: "Alt" },
   { id: "61", type: "ctrl-right", name: "Ctrl" },
-  { id: "62", type: "left", name: "←" },
-  { id: "63", type: "down", name: "↓" },
-  { id: "64", type: "right", name: "→" },
+  { id: "62", type: "left", name: "" },
+  { id: "63", type: "down", name: "" },
+  { id: "64", type: "right", name: "" },
   { id: "65", type: "fn", name: "Fn" },
 ];
