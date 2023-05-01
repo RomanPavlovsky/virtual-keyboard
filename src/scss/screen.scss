@@ -15,6 +15,12 @@
 }
 
 .textarea {
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 10px;
+  font-family: "Courier Prime", monospace;
+  font-size: 18px;
+  color: #fff;
   background-color: rgb(37, 33, 33);
   border-radius: 5px;
   width: 100%;

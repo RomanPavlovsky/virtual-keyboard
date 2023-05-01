@@ -1,9 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap");
 @import "./scss/utils/mixins.scss";
 @import "./scss/keyboard.scss";
 @import "./scss/screen.scss";
 
 body {
+  background-color: gray;
   height: 100vh;
   display: flex;
   flex-direction: column;

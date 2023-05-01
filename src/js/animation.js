@@ -1,4 +1,3 @@
-import { multiLang } from "./multiLang";
 const keys = document.querySelectorAll(".key");
 const keyboard = document.querySelector(".keyboard");
 
@@ -7,7 +6,6 @@ export const animation = () => {
   document.addEventListener("keydown", (event) => {
     event.preventDefault();
     event.stopPropagation();
-    console.log("code", event.code);
     for (const key of keys) {
       if (event.code === key.dataset.index) {
         key.classList.add("key_up");

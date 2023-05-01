@@ -3,7 +3,7 @@ import { keys } from "./keys";
 export const render = () => {
   document.body.innerHTML = `<div class="screen">
   <div class="screen__wrapper">
-    <textarea class="textarea" cols="30" rows="10"></textarea>
+    <textarea class="textarea" cols="10" rows="5"></textarea>
   </div>
 </div>
   <div class="keyboard"><div class="keyboard__wrapper"></div></div>`;
