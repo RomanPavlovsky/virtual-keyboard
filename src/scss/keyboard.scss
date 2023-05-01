@@ -56,7 +56,8 @@
   }
   &__letter {
     font-style: italic;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Work Sans", sans-serif;
+    // font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     color: #555;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
@@ -107,7 +108,8 @@
     right: 7px;
   }
 }
-.alt {
+.alt-left,
+.alt-right {
   @include actionKey;
   min-width: 72px;
 }

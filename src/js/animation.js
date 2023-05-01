@@ -1,3 +1,4 @@
+import { multiLang } from "./multiLang";
 const keys = document.querySelectorAll(".key");
 const keyboard = document.querySelector(".keyboard");
 
@@ -6,6 +7,7 @@ export const animation = () => {
   document.addEventListener("keydown", (event) => {
     event.preventDefault();
     event.stopPropagation();
+    console.log("code", event.code);
     for (const key of keys) {
       if (event.code === key.dataset.index) {
         key.classList.add("key_up");
@@ -18,12 +20,6 @@ export const animation = () => {
     if (event.target.closest(".key")) {
       event.target.classList.add("key_up");
       mouseActiveKey = event.target;
-    }
-
-    for (const key of keys) {
-      if (event.code === key.dataset.index) {
-        key.classList.add("key_up");
-      }
     }
   });
   document.addEventListener("keyup", (event) => {
@@ -38,7 +34,9 @@ export const animation = () => {
   document.addEventListener("mouseup", (event) => {
     event.preventDefault();
     event.stopPropagation();
-    mouseActiveKey.classList.remove("key_up");
+    if (mouseActiveKey !== undefined) {
+      mouseActiveKey.classList.remove("key_up");
+    }
   });
 };
 animation();
