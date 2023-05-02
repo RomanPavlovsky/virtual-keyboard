@@ -1,3 +1,5 @@
+import { isCaps } from "./shiftCaps";
+import { isShift } from "./shiftCaps";
 const textArea = document.querySelector(".textarea");
 const keyboard = document.querySelector(".keyboard");
 const keys = document.querySelectorAll(
@@ -5,8 +7,8 @@ const keys = document.querySelectorAll(
 );
 
 export const inputValue = () => {
-  textArea.focus();
   const inputSymbols = (symbol) => {
+    textArea.focus();
     const { selectionStart, selectionEnd } = textArea;
     textArea.value =
       textArea.value.slice(0, selectionStart) +
@@ -38,7 +40,11 @@ export const inputValue = () => {
     } else {
       for (const key of keys) {
         if (event.code === key.dataset.index) {
-          inputSymbols(key.lastElementChild.innerText);
+          if (isShift === true) {
+            inputSymbols(key.firstElementChild.innerText);
+          } else if (isShift === false) {
+            inputSymbols(key.lastElementChild.innerText);
+          }
         }
       }
     }

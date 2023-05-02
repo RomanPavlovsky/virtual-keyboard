@@ -1,5 +1,5 @@
 import { keys } from "./keys";
-import { renderCaps } from "./shiftCaps";
+// import { renderCaps } from "./shiftCaps";
 const keyboard = document.querySelector(".keyboard");
 const lettersKeys = document.querySelectorAll(`[data-type="letters"]`);
 const multiSymbolsKeys = document.querySelectorAll(
@@ -58,7 +58,7 @@ export const multiLang = () => {
       localStorage.setItem("lang", "en");
       reRender("en");
     }
-    renderCaps();
+    // renderCaps();
   };
   const checkCombination = () => {
     if (keysCombination.length === 2) {
