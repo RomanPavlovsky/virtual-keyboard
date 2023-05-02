@@ -1,68 +1,69 @@
-const keyboard = document.querySelector(".keyboard");
-export let isCaps = false;
-export let isShift = false;
+export const state = {
+  isShift: false,
+  isCaps: false
+}
 
-export const upCase = () => {
+const registerCapsShift = () => {
+  const keyboard = document.querySelector('.keyboard');
   setInterval(() => {
-    const lettersKeys = document.querySelectorAll(`.key__letter`);
-    if (isShift === true && isCaps === false) {
-      for (const key of lettersKeys) {
+    const lettersKeys = document.querySelectorAll('.key__letter');
+    if (state.isShift === true && state.isCaps === false) {
+      lettersKeys.forEach(element => {
+        const key = element;
         key.innerText = key.innerText.toUpperCase();
-      }
-    } else if (isShift === true && isCaps === true) {
-      for (const key of lettersKeys) {
+      });
+    } else if (state.isShift === true && state.isCaps === true) {
+      lettersKeys.forEach(element => {
+        const key = element;
         key.innerText = key.innerText.toLowerCase();
-      }
-    } else if (isShift === false && isCaps === true) {
-      for (const key of lettersKeys) {
+      });
+    } else if (state.isShift === false && state.isCaps === true) {
+      lettersKeys.forEach(element => {
+        const key = element;
         key.innerText = key.innerText.toUpperCase();
-      }
+      });
     } else {
-      for (const key of lettersKeys) {
+      lettersKeys.forEach(element => {
+        const key = element;
         key.innerText = key.innerText.toLowerCase();
-      }
+      });
     }
   });
-  document.addEventListener("keydown", (event) => {
-    if (event.code === "CapsLock" && isCaps === false) {
-      isCaps = true;
-    } else if (event.code === "CapsLock" && isCaps === true) {
-      isCaps = false;
-    } else if (event.key === "Shift" && isShift === false) {
-      isShift = true;
-    }
-  });
-
-  document.addEventListener("keyup", (event) => {
-    if (event.key === "Shift" && isShift === true) {
-      isShift = false;
+  document.addEventListener('keydown', (event) => {
+    if (event.code === 'CapsLock' && state.isCaps === false) {
+      state.isCaps = true;
+    } else if (event.code === 'CapsLock' && state.isCaps === true) {
+      state.isCaps = false;
+    } else if (event.key === 'Shift' && state.isShift === false) {
+      state.isShift = true;
     }
   });
 
-  keyboard.addEventListener("mousedown", (event) => {
-    if (
-      event.target.closest(".key").dataset.index === "CapsLock" &&
-      isCaps === false
-    ) {
-      isCaps = true;
+  document.addEventListener('keyup', (event) => {
+    if (event.key === 'Shift' && state.isShift === true) {
+      state.isShift = false;
+    }
+  });
+
+  keyboard.addEventListener('mousedown', (event) => {
+    if (event.target.closest('.key').id === 'CapsLock' && state.isCaps === false) {
+      state.isCaps = true;
+    } else if (event.target.closest('.key').id === 'CapsLock' && state.isCaps === true) {
+      state.isCaps = false;
     } else if (
-      event.target.closest(".key").dataset.index === "CapsLock" &&
-      isCaps === true
+      (event.target.closest('.key').id === 'ShiftLeft'
+      || event.target.closest('.key').id === 'ShiftRight') 
+      && state.isShift === false
     ) {
-      isCaps = false;
-    } else if (
-      (event.target.closest(".key").dataset.index === "ShiftLeft" ||
-        event.target.closest(".key").dataset.index === "ShiftRight") &&
-      isShift === false
-    ) {
-      isShift = true;
+      state.isShift = true;
     }
   });
 
-  document.addEventListener("mouseup", () => {
-    if (isShift === true) {
-      isShift = false;
+  document.addEventListener('mouseup', () => {
+    if (state.isShift === true) {
+      state.isShift = false;
     }
   });
 };
-upCase();
+export default registerCapsShift;
+

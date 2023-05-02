@@ -1,0 +1,11 @@
+{
+  "env": {
+    "es2021": true,
+    "browser": true
+  },
+  "extends": ["airbnb-base", "prettier"],
+  "rules": {
+    "import/extensions": ["error", "ignorePackages"],
+    "indent": "error"
+  }
+}

@@ -1,49 +1,49 @@
-import { isCaps } from "./shiftCaps";
-const keys = document.querySelectorAll(".key");
-const keyboard = document.querySelector(".keyboard");
-const caps = document.querySelector(`[data-index="CapsLock"]`);
+import { state } from './shiftCaps.js';
 
-export const animation = () => {
+
+
+const animation = () => {
+  const keys = document.querySelectorAll('.key');
+  const keyboard = document.querySelector('.keyboard');
+  const caps = document.querySelector('#CapsLock');
   let mouseActiveKey;
-  document.addEventListener("keydown", (event) => {
+  document.addEventListener('keydown', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    for (const key of keys) {
-      if (event.code === key.dataset.index) {
-        key.classList.add("key_up");
+    keys.forEach(key => {
+      if (event.code === key.id) {
+        key.classList.add('key_up');
       }
-    }
+    });
   });
-  keyboard.addEventListener("mousedown", (event) => {
+  keyboard.addEventListener('mousedown', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    if (event.target.closest(".key")) {
-      event.target.classList.add("key_up");
+    if (event.target.closest('.key')) {
+      event.target.classList.add('key_up');
       mouseActiveKey = event.target;
     }
   });
-  document.addEventListener("keyup", (event) => {
+  document.addEventListener('keyup', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    for (const key of keys) {
-      if (event.code === key.dataset.index && event.code !== "CapsLock") {
-        key.classList.remove("key_up");
-      } else if (event.code === "CapsLock" && isCaps === false) {
-        key.classList.remove("key_up");
+    keys.forEach(key => {
+      if (event.code === key.id && event.code !== 'CapsLock') {
+        key.classList.remove('key_up');
+      } else if (event.code === 'CapsLock' && state.isCaps === false) {
+        key.classList.remove('key_up');
       }
-    }
+    });
   });
-  document.addEventListener("mouseup", (event) => {
+  document.addEventListener('mouseup', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    if (
-      mouseActiveKey !== undefined &&
-      mouseActiveKey.dataset.index !== "CapsLock"
-    ) {
-      mouseActiveKey.classList.remove("key_up");
-    } else if (event.target.dataset.index === "CapsLock" && isCaps === false) {
-      caps.classList.remove("key_up");
+    if (mouseActiveKey !== undefined && mouseActiveKey !== 'CapsLock') {
+      mouseActiveKey.classList.remove('key_up');
+    } else if (event.target.id === 'CapsLock' && state.isCaps === false) {
+      caps.classList.remove('key_up');
     }
   });
 };
-animation();
+export default animation;
+
