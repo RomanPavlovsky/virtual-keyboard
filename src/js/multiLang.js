@@ -39,11 +39,9 @@ export const multiLang = () => {
       for (const i of keys) {
         if (key.dataset.index === i.code) {
           if (language === "en") {
-            key.firstElementChild.textContent = `${i.name.en[1]}`;
-            key.lastElementChild.textContent = `${i.name.en[2]}`;
+            key.innerHTML = `<span class="key__name1">${i.name.en[1]}</span><span class="key__name2">${i.name.en[2]}</span>`;
           } else {
-            key.firstElementChild.textContent = `${i.name.ru[1]}`;
-            key.lastElementChild.textContent = `${i.name.ru[2]}`;
+            key.innerHTML = `<span class="key__letter">${i.name.ru[1]}</span>`;
           }
         }
       }

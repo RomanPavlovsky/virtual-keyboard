@@ -1,25 +1,25 @@
-const lettersKeys = document.querySelectorAll(`[data-type="letters"]`);
 const keyboard = document.querySelector(".keyboard");
 export let isCaps = false;
 export let isShift = false;
 
 export const upCase = () => {
   setInterval(() => {
+    const lettersKeys = document.querySelectorAll(`.key__letter`);
     if (isShift === true && isCaps === false) {
       for (const key of lettersKeys) {
-        key.lastChild.innerText = key.innerText.toUpperCase();
+        key.innerText = key.innerText.toUpperCase();
       }
     } else if (isShift === true && isCaps === true) {
       for (const key of lettersKeys) {
-        key.lastChild.innerText = key.innerText.toLowerCase();
+        key.innerText = key.innerText.toLowerCase();
       }
     } else if (isShift === false && isCaps === true) {
       for (const key of lettersKeys) {
-        key.lastChild.innerText = key.innerText.toUpperCase();
+        key.innerText = key.innerText.toUpperCase();
       }
     } else {
       for (const key of lettersKeys) {
-        key.lastChild.innerText = key.innerText.toLowerCase();
+        key.innerText = key.innerText.toLowerCase();
       }
     }
   });
