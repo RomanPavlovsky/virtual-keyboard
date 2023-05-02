@@ -1,11 +1,16 @@
 import { keys } from "./keys";
 
 export const render = () => {
-  document.body.innerHTML = `<div class="screen">
+  document.body.innerHTML = `
+  <div class="info">
+    Windows OS </br>
+    swap language: Ctrl + Alt
+  </div>
+  <div class="screen">
   <div class="screen__wrapper">
     <textarea class="textarea" cols="10" rows="5"></textarea>
   </div>
-</div>
+  </div>
   <div class="keyboard"><div class="keyboard__wrapper"></div></div>`;
   const keyBoard = document.querySelector(".keyboard__wrapper");
   class KeyBtn {
