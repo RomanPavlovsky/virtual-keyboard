@@ -1,4 +1,4 @@
-import  keys  from './keys.js';
+import keys from './keys.js';
 
 const multiLang = () => {
   const keyboard = document.querySelector('.keyboard');
@@ -11,10 +11,9 @@ const multiLang = () => {
   );
   let keysCombination = [];
   const reRender = (language) => {
-
-    lettersKeys.forEach(element => {
+    lettersKeys.forEach((element) => {
       const letterKey = element;
-      keys.forEach(key => {
+      keys.forEach((key) => {
         if (letterKey.id === key.code) {
           if (language === 'en') {
             letterKey.firstElementChild.textContent = `${key.name.en}`;
@@ -24,9 +23,9 @@ const multiLang = () => {
         }
       });
     });
-    multiSymbolsKeys.forEach(element => {
+    multiSymbolsKeys.forEach((element) => {
       const multiSymbolsKey = element;
-      keys.forEach(key => {
+      keys.forEach((key) => {
         if (multiSymbolsKey.id === key.code) {
           if (language === 'en') {
             multiSymbolsKey.firstElementChild.textContent = `${key.name.en[1]}`;
@@ -38,9 +37,9 @@ const multiLang = () => {
         }
       });
     });
-    multiLettersKeys.forEach(element => {
+    multiLettersKeys.forEach((element) => {
       const multiLettersKey = element;
-      keys.forEach(key => {
+      keys.forEach((key) => {
         if (multiLettersKey.id === key.code) {
           if (language === 'en') {
             multiLettersKey.innerHTML = `<span class="key__name1">${key.name.en[1]}</span><span class="key__name2">${key.name.en[2]}</span>`;
@@ -64,7 +63,7 @@ const multiLang = () => {
   const checkCombination = () => {
     if (keysCombination.length === 2) {
       if ((keysCombination.includes('ControlLeft') && keysCombination.includes('AltLeft'))
-        || (keysCombination.includes('ControlLeft') && keysCombination.includes('AltRight'))){
+        || (keysCombination.includes('ControlLeft') && keysCombination.includes('AltRight'))) {
         return true;
       }
       if ((keysCombination.includes('ControlRight') && keysCombination.includes('AltLeft'))

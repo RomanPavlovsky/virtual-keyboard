@@ -1,29 +1,29 @@
 export const state = {
   isShift: false,
-  isCaps: false
-}
+  isCaps: false,
+};
 
 const registerCapsShift = () => {
   const keyboard = document.querySelector('.keyboard');
   setInterval(() => {
     const lettersKeys = document.querySelectorAll('.key__letter');
     if (state.isShift === true && state.isCaps === false) {
-      lettersKeys.forEach(element => {
+      lettersKeys.forEach((element) => {
         const key = element;
         key.innerText = key.innerText.toUpperCase();
       });
     } else if (state.isShift === true && state.isCaps === true) {
-      lettersKeys.forEach(element => {
+      lettersKeys.forEach((element) => {
         const key = element;
         key.innerText = key.innerText.toLowerCase();
       });
     } else if (state.isShift === false && state.isCaps === true) {
-      lettersKeys.forEach(element => {
+      lettersKeys.forEach((element) => {
         const key = element;
         key.innerText = key.innerText.toUpperCase();
       });
     } else {
-      lettersKeys.forEach(element => {
+      lettersKeys.forEach((element) => {
         const key = element;
         key.innerText = key.innerText.toLowerCase();
       });
@@ -52,7 +52,7 @@ const registerCapsShift = () => {
       state.isCaps = false;
     } else if (
       (event.target.closest('.key').id === 'ShiftLeft'
-      || event.target.closest('.key').id === 'ShiftRight') 
+      || event.target.closest('.key').id === 'ShiftRight')
       && state.isShift === false
     ) {
       state.isShift = true;
@@ -66,4 +66,3 @@ const registerCapsShift = () => {
   });
 };
 export default registerCapsShift;
-

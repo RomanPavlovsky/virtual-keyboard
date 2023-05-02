@@ -3,9 +3,8 @@
     "es2021": true,
     "browser": true
   },
-  "extends": ["airbnb-base", "prettier"],
+  "extends": "airbnb-base",
   "rules": {
-    "import/extensions": ["error", "ignorePackages"],
-    "indent": "error"
+    "import/extensions": ["error", "ignorePackages"]
   }
 }

@@ -1,7 +1,5 @@
 import { state } from './shiftCaps.js';
 
-
-
 const animation = () => {
   const keys = document.querySelectorAll('.key');
   const keyboard = document.querySelector('.keyboard');
@@ -10,7 +8,7 @@ const animation = () => {
   document.addEventListener('keydown', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    keys.forEach(key => {
+    keys.forEach((key) => {
       if (event.code === key.id) {
         key.classList.add('key_up');
       }
@@ -27,7 +25,7 @@ const animation = () => {
   document.addEventListener('keyup', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    keys.forEach(key => {
+    keys.forEach((key) => {
       if (event.code === key.id && event.code !== 'CapsLock') {
         key.classList.remove('key_up');
       } else if (event.code === 'CapsLock' && state.isCaps === false) {
@@ -46,4 +44,3 @@ const animation = () => {
   });
 };
 export default animation;
-

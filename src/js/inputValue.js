@@ -36,7 +36,7 @@ const inputValue = () => {
     } else if (event.code === 'ArrowDown') {
       inputSymbols('↓');
     } else {
-      keys.forEach(key => {
+      keys.forEach((key) => {
         if (event.code === key.id) {
           if (state.isShift === true) {
             inputSymbols(key.firstElementChild.innerText);
