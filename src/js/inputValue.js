@@ -16,15 +16,54 @@ export const inputValue = () => {
     textArea.selectionStart = textArea.selectionEnd;
   };
   document.addEventListener("keydown", (event) => {
-    for (const key of keys) {
-      if (event.code === key.dataset.index) {
-        inputSymbols(key.lastElementChild.innerText);
+    if (event.code === "Tab") {
+      inputSymbols(`\t`);
+    } else if (event.code === "Backspace") {
+      textArea.value = textArea.value.slice(0, textArea.value.length - 1);
+    } else if (event.code === "Delete") {
+      const { selectionStart, selectionEnd } = textArea;
+      textArea.setRangeText("", selectionStart, selectionEnd + 1, "end");
+    } else if (event.code === "Space") {
+      inputSymbols(" ");
+    } else if (event.code === "Enter") {
+      inputSymbols(`\n`);
+    } else if (event.code === "ArrowUp") {
+      inputSymbols(`↑`);
+    } else if (event.code === "ArrowLeft") {
+      inputSymbols(`←`);
+    } else if (event.code === "ArrowRight") {
+      inputSymbols(`→`);
+    } else if (event.code === "ArrowDown") {
+      inputSymbols(`↓`);
+    } else {
+      for (const key of keys) {
+        if (event.code === key.dataset.index) {
+          inputSymbols(key.lastElementChild.innerText);
+        }
       }
     }
   });
   keyboard.addEventListener("mousedown", (event) => {
-    let key = event.target.closest(".key");
-    if (!!event.target.closest(".key").dataset.type) {
+    if (event.target.closest(".key").dataset.index === "Tab") {
+      inputSymbols(`\t`);
+    } else if (event.target.closest(".key").dataset.index === "Backspace") {
+      textArea.value = textArea.value.slice(0, textArea.value.length - 1);
+    } else if (event.target.closest(".key").dataset.index === "Delete") {
+      const { selectionStart, selectionEnd } = textArea;
+      textArea.setRangeText("", selectionStart, selectionEnd + 1, "end");
+    } else if (event.target.closest(".key").dataset.index === "Space") {
+      inputSymbols(" ");
+    } else if (event.target.closest(".key").dataset.index === "Enter") {
+      inputSymbols(`\n`);
+    } else if (event.target.closest(".key").dataset.index === "ArrowUp") {
+      inputSymbols(`↑`);
+    } else if (event.target.closest(".key").dataset.index === "ArrowLeft") {
+      inputSymbols(`←`);
+    } else if (event.target.closest(".key").dataset.index === "ArrowRight") {
+      inputSymbols(`→`);
+    } else if (event.target.closest(".key").dataset.index === "ArrowDown") {
+      inputSymbols(`↓`);
+    } else if (!!event.target.closest(".key").dataset.type) {
       inputSymbols(event.target.closest(".key").lastElementChild.innerText);
     }
   });

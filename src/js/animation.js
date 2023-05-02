@@ -1,5 +1,7 @@
+import { isCaps } from "./shiftCaps";
 const keys = document.querySelectorAll(".key");
 const keyboard = document.querySelector(".keyboard");
+const caps = document.querySelector(`[data-index="CapsLock"]`);
 
 export const animation = () => {
   let mouseActiveKey;
@@ -24,7 +26,9 @@ export const animation = () => {
     event.preventDefault();
     event.stopPropagation();
     for (const key of keys) {
-      if (event.code === key.dataset.index) {
+      if (event.code === key.dataset.index && event.code !== "CapsLock") {
+        key.classList.remove("key_up");
+      } else if (event.code === "CapsLock" && isCaps === false) {
         key.classList.remove("key_up");
       }
     }
@@ -32,8 +36,13 @@ export const animation = () => {
   document.addEventListener("mouseup", (event) => {
     event.preventDefault();
     event.stopPropagation();
-    if (mouseActiveKey !== undefined) {
+    if (
+      mouseActiveKey !== undefined &&
+      mouseActiveKey.dataset.index !== "CapsLock"
+    ) {
       mouseActiveKey.classList.remove("key_up");
+    } else if (event.target.dataset.index === "CapsLock" && isCaps === false) {
+      caps.classList.remove("key_up");
     }
   });
 };
