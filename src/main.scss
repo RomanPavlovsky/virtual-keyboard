@@ -3,6 +3,7 @@
 @import "./scss/utils/mixins.scss";
 @import "./scss/keyboard.scss";
 @import "./scss/screen.scss";
+@import "./scss/speakers.scss";
 
 body {
   background: linear-gradient(90deg, #d8a933 0%, #858536 100%);
@@ -11,18 +12,16 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 50px;
+  
 }
+.wire1 {
+  position: relative;
+  left: 200px;
+  z-index: -2;
+  align-self: center;
+  background-color: rgb(180, 178, 178);
+  width: 8px;
+  background: linear-gradient(90deg, rgb(236, 233, 233) 0%, rgb(175, 171, 171)100%);
+  height: 70px;
+}  
 
-.info {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  font-family: "Work Sans", sans-serif;
-  font-weight: bold;
-  color: #555;
-  position: absolute;
-  left: 15px;
-  bottom: 15px;
-  font-size: 1rem;
-}

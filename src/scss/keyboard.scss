@@ -1,4 +1,17 @@
 .keyboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+  height: 340px;
+  border-radius: 15px;
+  background-color: #d1cdc4;
+  border-bottom: 10px solid #a39f97;
+  border-width: 3px 7px 10px;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: #d1cdc4 #d1cdc4 #c5c4bb #d8d5cb;
+  box-shadow: 5px 13px 33px 12px rgba(34, 60, 80, 0.33);
   &__wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -7,11 +20,11 @@
     column-gap: 2px;
     row-gap: 2px;
     width: 866px;
-    height: 100%;
     background-color: rgb(94, 94, 94);
     overflow: hidden;
     border: 3px solid rgb(94, 94, 94);
     border-radius: 5px;
+    
   }
 }
 .key {

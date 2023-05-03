@@ -1,28 +1,118 @@
-.screen {
-  width: 860px;
-  height: 530px;
-  background-color: #cecac1;
-  border-radius: 15px;
+.screen{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
   &__wrapper {
-    position: relative;
-    box-sizing: border-box;
-    padding: 50px 40px 70px;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    width: 680px;
+    height: 500px;
+    background: linear-gradient(45deg, #e2ddd1 0%, #cfc6b2 70% );
+    border-radius: 15px;
   }
+  &__container {
+      position: relative;
+      box-sizing: border-box;
+      padding: 50px 50px 50px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;  
+    }
+    &__light {
+      position: absolute;
+      bottom: 20px;
+      right: 125px;
+      border-radius: 50%;
+      width: 8px;
+      height: 8px;
+      background: radial-gradient(circle, rgb(73, 255, 1) 20%, rgb(23, 94, 1) 90%);
+      box-sizing: border-box;
+      border: 1px solid rgb(94, 94, 94);
+      box-shadow: 0px 0px 2px 2px rgb(157, 160, 145);
+    }
+    &__button-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      position: absolute;
+      bottom: 7px;
+      right: 80px;
+      border-radius: 50%;
+      width: 31px;
+      height: 31px;
+      background-color: #555;
+    }
+    &__button {
+      border-radius: 50%;
+      width: 31px;
+      height: 31px;
+      background: url("./assets/icons/power-bold.svg") no-repeat  center, radial-gradient(circle, #e2ddd1  60%, #c4beb2 70% ) ;
+      box-sizing: border-box;
+      border: 1px solid rgb(94, 94, 94);
+      box-shadow: 0px 0px 1px 1px #555;
+      
+      &:hover {
+        animation: pickDown 0.2s linear 1;
+        animation-fill-mode: both;
+          @keyframes pickDown {
+          from {
+              transform: scale3d(1, 1, 1);
+              }
+            to {
+            transform: scale3d(0.95, 0.95, 0.95);
+          }
+          }
+        }
+    }
+    &__footer{
+      position: absolute;
+      bottom: -50px;
+      z-index: -1;
+      width: 350px;
+      border-radius: 50%;
+      height: 100px;
+      box-sizing: border-box;
+      border: 5px solid #c4beb2;
+      background: linear-gradient(180deg, #4b4843 0%, #ece4cf 70% );
+    }
+  
 }
 
+
+.os-info {
+  
+  width: 200px;
+  height: 200px;
+  background: url("./assets/icons/win.png") no-repeat center;
+  background-size: contain;
+  background-size: 100%;
+  position: absolute;
+
+  // top: 3px;
+  // right: -16px;
+  // bottom: 5px;
+  // left: 300px;
+
+  
+}
 .textarea {
+  outline:none;
+  box-sizing: border-box;
+  border-width: 15px 15px 20px;
+  border-style: solid;
+  border-color: #a0998a #c4beb2 #ebe8e0 #c4beb2 ;
   overflow: hidden;
   box-sizing: border-box;
   padding: 10px;
   font-family: "Courier Prime", monospace;
-  font-size: 18px;
+  font-size: 12px;
   color: #fff;
-  background-color: rgb(37, 33, 33);
+  background: radial-gradient(circle, rgba(34,34,34,1) 30%, rgb(26, 25, 25) 90%);
   border-radius: 5px;
   width: 100%;
   height: 100%;

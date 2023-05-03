@@ -1,20 +1,20 @@
 import keys from './keys.js';
 
 const render = () => {
-  document.body.innerHTML = `
+  // document.body.innerHTML = `
   
-  <div class="screen">
-  <div class="screen__wrapper">
-    <textarea class="textarea" cols="10" rows="5" ></textarea>
-    <div class="info">
-    <div>
-    Windows OS
-    </div>
-    <div>swap language: Ctrl + Alt</div>
-  </div>
-  </div>
-  </div>
-  <div class="keyboard"><div class="keyboard__wrapper"></div></div>`;
+  // <div class="screen">
+  // <div class="screen__wrapper">
+  //   <textarea class="textarea" cols="10" rows="5" ></textarea>
+  //   <div class="info">
+  //   <div>
+  //   Windows OS
+  //   </div>
+  //   <div>swap language: Ctrl + Alt</div>
+  // </div>
+  // </div>
+  // </div>
+  // <div class="keyboard"><div class="keyboard__wrapper"></div></div>`;
   const keyBoard = document.querySelector('.keyboard__wrapper');
   class KeyBtn {
     constructor(obj) {
