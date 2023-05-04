@@ -2,7 +2,7 @@ import { state } from './shiftCaps.js';
 
 const animation = () => {
   const keys = document.querySelectorAll('.key');
-  const keyboard = document.querySelector('.keyboard');
+  const keyboard = document.querySelector('.keyboard__wrapper');
   const caps = document.querySelector('#CapsLock');
   let mouseActiveKey;
   document.addEventListener('keydown', (event) => {
@@ -36,7 +36,7 @@ const animation = () => {
   document.addEventListener('mouseup', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    if (mouseActiveKey !== undefined && mouseActiveKey !== 'CapsLock') {
+    if (mouseActiveKey !== undefined && mouseActiveKey.id !== 'CapsLock') {
       mouseActiveKey.classList.remove('key_up');
     } else if (event.target.id === 'CapsLock' && state.isCaps === false) {
       caps.classList.remove('key_up');

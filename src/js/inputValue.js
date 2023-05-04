@@ -2,7 +2,7 @@ import { state } from './shiftCaps.js';
 
 const inputValue = () => {
   const textArea = document.querySelector('.textarea');
-  const keyboard = document.querySelector('.keyboard');
+  const keyboard = document.querySelector('.keyboard__wrapper');
   const keys = document.querySelectorAll(
     '[data-type="letters"], [data-type="multi-letters"], [data-type="multi-symbols"], [data-type="symbols"]',
   );
@@ -48,6 +48,7 @@ const inputValue = () => {
     }
   });
   keyboard.addEventListener('mousedown', (event) => {
+   if (event.target.closest('.key')){
     if (event.target.closest('.key').id === 'Tab') {
       inputSymbols('\t');
     } else if (event.target.closest('.key').id === 'Backspace') {
@@ -70,6 +71,7 @@ const inputValue = () => {
     } else if (event.target.closest('.key').dataset.type) {
       inputSymbols(event.target.closest('.key').lastElementChild.innerText);
     }
+   }
   });
 };
 export default inputValue;

@@ -4,7 +4,7 @@ export const state = {
 };
 
 const registerCapsShift = () => {
-  const keyboard = document.querySelector('.keyboard');
+  const keyboard = document.querySelector('.keyboard__wrapper');
   setInterval(() => {
     const lettersKeys = document.querySelectorAll('.key__letter');
     if (state.isShift === true && state.isCaps === false) {
@@ -46,6 +46,7 @@ const registerCapsShift = () => {
   });
 
   keyboard.addEventListener('mousedown', (event) => {
+    if (event.target.closest('.key')){
     if (event.target.closest('.key').id === 'CapsLock' && state.isCaps === false) {
       state.isCaps = true;
     } else if (event.target.closest('.key').id === 'CapsLock' && state.isCaps === true) {
@@ -56,6 +57,7 @@ const registerCapsShift = () => {
       && state.isShift === false
     ) {
       state.isShift = true;
+    }
     }
   });
 
