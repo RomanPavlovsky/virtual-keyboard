@@ -46,18 +46,18 @@ const registerCapsShift = () => {
   });
 
   keyboard.addEventListener('mousedown', (event) => {
-    if (event.target.closest('.key')){
-    if (event.target.closest('.key').id === 'CapsLock' && state.isCaps === false) {
-      state.isCaps = true;
-    } else if (event.target.closest('.key').id === 'CapsLock' && state.isCaps === true) {
-      state.isCaps = false;
-    } else if (
-      (event.target.closest('.key').id === 'ShiftLeft'
+    if (event.target.closest('.key')) {
+      if (event.target.closest('.key').id === 'CapsLock' && state.isCaps === false) {
+        state.isCaps = true;
+      } else if (event.target.closest('.key').id === 'CapsLock' && state.isCaps === true) {
+        state.isCaps = false;
+      } else if (
+        (event.target.closest('.key').id === 'ShiftLeft'
       || event.target.closest('.key').id === 'ShiftRight')
       && state.isShift === false
-    ) {
-      state.isShift = true;
-    }
+      ) {
+        state.isShift = true;
+      }
     }
   });
 

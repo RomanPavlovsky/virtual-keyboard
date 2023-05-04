@@ -48,30 +48,30 @@ const inputValue = () => {
     }
   });
   keyboard.addEventListener('mousedown', (event) => {
-   if (event.target.closest('.key')){
-    if (event.target.closest('.key').id === 'Tab') {
-      inputSymbols('\t');
-    } else if (event.target.closest('.key').id === 'Backspace') {
-      textArea.value = textArea.value.slice(0, textArea.value.length - 1);
-    } else if (event.target.closest('.key').id === 'Delete') {
-      const { selectionStart, selectionEnd } = textArea;
-      textArea.setRangeText('', selectionStart, selectionEnd + 1, 'end');
-    } else if (event.target.closest('.key').id === 'Space') {
-      inputSymbols(' ');
-    } else if (event.target.closest('.key').id === 'Enter') {
-      inputSymbols('\n');
-    } else if (event.target.closest('.key').id === 'ArrowUp') {
-      inputSymbols('↑');
-    } else if (event.target.closest('.key').id === 'ArrowLeft') {
-      inputSymbols('←');
-    } else if (event.target.closest('.key').id === 'ArrowRight') {
-      inputSymbols('→');
-    } else if (event.target.closest('.key').id === 'ArrowDown') {
-      inputSymbols('↓');
-    } else if (event.target.closest('.key').dataset.type) {
-      inputSymbols(event.target.closest('.key').lastElementChild.innerText);
+    if (event.target.closest('.key')) {
+      if (event.target.closest('.key').id === 'Tab') {
+        inputSymbols('\t');
+      } else if (event.target.closest('.key').id === 'Backspace') {
+        textArea.value = textArea.value.slice(0, textArea.value.length - 1);
+      } else if (event.target.closest('.key').id === 'Delete') {
+        const { selectionStart, selectionEnd } = textArea;
+        textArea.setRangeText('', selectionStart, selectionEnd + 1, 'end');
+      } else if (event.target.closest('.key').id === 'Space') {
+        inputSymbols(' ');
+      } else if (event.target.closest('.key').id === 'Enter') {
+        inputSymbols('\n');
+      } else if (event.target.closest('.key').id === 'ArrowUp') {
+        inputSymbols('↑');
+      } else if (event.target.closest('.key').id === 'ArrowLeft') {
+        inputSymbols('←');
+      } else if (event.target.closest('.key').id === 'ArrowRight') {
+        inputSymbols('→');
+      } else if (event.target.closest('.key').id === 'ArrowDown') {
+        inputSymbols('↓');
+      } else if (event.target.closest('.key').dataset.type) {
+        inputSymbols(event.target.closest('.key').lastElementChild.innerText);
+      }
     }
-   }
   });
 };
 export default inputValue;
