@@ -4,19 +4,21 @@ const inputValue = () => {
   const textArea = document.querySelector('.textarea');
   const keyboard = document.querySelector('.keyboard__wrapper');
   const keys = document.querySelectorAll(
-    '[data-type="letters"], [data-type="multi-letters"], [data-type="multi-symbols"], [data-type="symbols"]',
+    '[data-type="letters"], [data-type="multi-letters"], [data-type="multi-symbols"], [data-type="symbols"]'
   );
   const inputSymbols = (symbol) => {
     textArea.focus();
     const { selectionStart, selectionEnd } = textArea;
-    textArea.value = textArea.value.slice(0, selectionStart)
-      + symbol
-      + textArea.value.slice(selectionEnd);
+    textArea.value =
+      textArea.value.slice(0, selectionStart) +
+      symbol +
+      textArea.value.slice(selectionEnd);
     textArea.selectionEnd = selectionStart + symbol.length;
     textArea.selectionStart = textArea.selectionEnd;
   };
   document.addEventListener('keydown', (event) => {
     if (event.code === 'Tab') {
+      event.stopPropagation();
       inputSymbols('\t');
     } else if (event.code === 'Backspace') {
       textArea.value = textArea.value.slice(0, textArea.value.length - 1);

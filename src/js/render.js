@@ -11,11 +11,12 @@ const render = () => {
   <div class="screen">
     <div class="screen__wrapper">
       <div class="screen__container">
-        <textarea class="textarea" cols="10" rows="5"></textarea>
+        <textarea class="textarea" cols="15" rows="10"></textarea>
+        <div class="screen_off"></div><div class="screen_load"></div>
         <div class="os-info">
           Windows OS
         </div>
-        <div class="screen__light"></div>
+        <div class="screen__light screen__light_active"></div>
         <div class="screen__button-wrapper">
           <div class="screen__button"></div>
         </div>

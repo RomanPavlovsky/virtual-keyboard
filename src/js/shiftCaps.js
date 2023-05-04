@@ -30,6 +30,7 @@ const registerCapsShift = () => {
     }
   });
   document.addEventListener('keydown', (event) => {
+    event.stopPropagation();
     if (event.code === 'CapsLock' && state.isCaps === false) {
       state.isCaps = true;
     } else if (event.code === 'CapsLock' && state.isCaps === true) {
@@ -40,6 +41,7 @@ const registerCapsShift = () => {
   });
 
   document.addEventListener('keyup', (event) => {
+    event.stopPropagation();
     if (event.key === 'Shift' && state.isShift === true) {
       state.isShift = false;
     }
@@ -47,14 +49,20 @@ const registerCapsShift = () => {
 
   keyboard.addEventListener('mousedown', (event) => {
     if (event.target.closest('.key')) {
-      if (event.target.closest('.key').id === 'CapsLock' && state.isCaps === false) {
+      if (
+        event.target.closest('.key').id === 'CapsLock' &&
+        state.isCaps === false
+      ) {
         state.isCaps = true;
-      } else if (event.target.closest('.key').id === 'CapsLock' && state.isCaps === true) {
+      } else if (
+        event.target.closest('.key').id === 'CapsLock' &&
+        state.isCaps === true
+      ) {
         state.isCaps = false;
       } else if (
-        (event.target.closest('.key').id === 'ShiftLeft'
-      || event.target.closest('.key').id === 'ShiftRight')
-      && state.isShift === false
+        (event.target.closest('.key').id === 'ShiftLeft' ||
+          event.target.closest('.key').id === 'ShiftRight') &&
+        state.isShift === false
       ) {
         state.isShift = true;
       }

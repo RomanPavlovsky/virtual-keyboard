@@ -4,8 +4,33 @@ const animation = () => {
   const keys = document.querySelectorAll('.key');
   const caps = document.querySelector('#CapsLock');
   const mouse = document.querySelector('.mouse__left');
+  const screenButton = document.querySelector('.screen__button-wrapper');
+  const screenLight = document.querySelector('.screen__light');
+  const screenOff = document.querySelector('.screen_off');
+  const screenLoad = document.querySelector('.screen_load');
   let mouseActiveKey;
+  let isScreen = true;
 
+  const turnOnScreen = () => {
+    if (isScreen === false) {
+      screenButton.removeEventListener('click', turnOnScreen);
+      isScreen = true;
+      screenLight.classList.remove('screen__light_inactive');
+      screenLight.classList.add('screen__light_active');
+      screenLoad.style.display = 'block';
+      setTimeout(() => {
+        screenButton.addEventListener('click', turnOnScreen);
+        screenOff.style.display = 'none';
+        screenLoad.style.display = 'none';
+      }, 3000);
+    } else {
+      isScreen = false;
+      screenLight.classList.remove('screen__light_active');
+      screenLight.classList.add('screen__light_inactive');
+      screenOff.style.display = 'block';
+    }
+  };
+  screenButton.addEventListener('click', turnOnScreen);
   document.addEventListener('keydown', (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -16,7 +41,6 @@ const animation = () => {
     });
   });
   document.addEventListener('mousedown', (event) => {
-    event.preventDefault();
     mouse.classList.add('mouse__left_active');
     if (event.target.closest('.key')) {
       event.target.classList.add('key_up');
@@ -26,6 +50,7 @@ const animation = () => {
 
   document.addEventListener('keyup', (event) => {
     event.preventDefault();
+    event.stopPropagation();
     keys.forEach((key) => {
       if (event.code === key.id && event.code !== 'CapsLock') {
         key.classList.remove('key_up');
