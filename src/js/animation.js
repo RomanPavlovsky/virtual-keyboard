@@ -5,6 +5,7 @@ const animation = () => {
   const keyboard = document.querySelector('.keyboard__wrapper');
   const caps = document.querySelector('#CapsLock');
   let mouseActiveKey;
+
   document.addEventListener('keydown', (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -24,7 +25,6 @@ const animation = () => {
   });
   document.addEventListener('keyup', (event) => {
     event.preventDefault();
-    event.stopPropagation();
     keys.forEach((key) => {
       if (event.code === key.id && event.code !== 'CapsLock') {
         key.classList.remove('key_up');

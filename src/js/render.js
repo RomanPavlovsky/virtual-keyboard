@@ -3,6 +3,7 @@ import keys from './keys.js';
 const render = () => {
   document.body.innerHTML = `<section class="section-up">
   <div class="speakers">
+    
     <div class="speakers__panel">
     </div>
     <div class="speakers__footer"></div>
@@ -24,8 +25,8 @@ const render = () => {
   </div>
   <div class="speakers">
     <div class="speakers__panel">
-      <div class="speakers__light"></div>
-      <div class="speakers__power"></div>
+      <div class="speakers__light speakers__light_active"></div>
+      <div class="speakers__power speakers__power_active"></div>
     </div>
     <div class="speakers__footer"></div>
   </div>

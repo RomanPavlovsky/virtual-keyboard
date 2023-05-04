@@ -60,11 +60,11 @@ module.exports = {
         type: "json",
       },
       {
-        test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
+        test: /\.(png|jpe?g|gif|svg|webp|ico|mp3|txt)$/i,
         type: "asset/resource",
       },
       {
-        test: /\.(woff2?|eot|ttf|otf)$/i,
+        test: /\.(woff2?|eot|ttf|otf|txt)$/i,
         type: "asset/resource",
       },
     ],

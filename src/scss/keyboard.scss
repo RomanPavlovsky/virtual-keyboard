@@ -13,7 +13,7 @@
   border-color: #d1cdc4 #d1cdc4 #c5c4bb #d8d5cb;
   box-shadow: 5px 13px 33px 12px rgba(34, 60, 80, 0.33);
   &::after {
-    content: "For swap language press Ctrl + Alt";
+    content: 'For swap language press Ctrl + Alt';
     position: absolute;
     bottom: 2px;
     left: 20px;
@@ -35,7 +35,6 @@
     overflow: hidden;
     border: 3px solid rgb(94, 94, 94);
     border-radius: 5px;
-    
   }
 }
 .key {
@@ -58,7 +57,7 @@
     overflow: hidden;
   }
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -67,7 +66,7 @@
     box-shadow: 5px 13px 33px 12px rgba(34, 60, 80, 0.33);
   }
   &__action {
-    font-family: "Work Sans", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-style: italic;
     font-weight: 500;
     position: absolute;
@@ -80,7 +79,7 @@
   }
   &__letter {
     font-style: italic;
-    font-family: "Work Sans", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     // font-family: Arial, Helvetica, sans-serif;
     font-weight: 500;
     color: #555;
@@ -88,7 +87,7 @@
     font-size: 18px;
   }
   &__name1 {
-    font-family: "Work Sans", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     color: #555;
     position: absolute;
     top: 2px;
@@ -102,7 +101,7 @@
     align-items: center;
   }
   &__name2 {
-    font-family: "Work Sans", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 500;
     color: #555;
     position: absolute;
@@ -116,7 +115,7 @@
   }
 }
 .win {
-  background: url("./assets/icons/microsoft-windows-classic\ .svg") no-repeat
+  background: url('./assets/icons/microsoft-windows-classic\ .svg') no-repeat
       center,
     linear-gradient(90deg, #d1c39f 0%, #acac92 100%);
   border-color: #cec0a0 #dacba9 #978d75 #c4b698;
@@ -138,7 +137,7 @@
   min-width: 72px;
 }
 .backspace {
-  background: url("./assets/icons/left-arrow.svg") no-repeat 20% 45%,
+  background: url('./assets/icons/left-arrow.svg') no-repeat 20% 45%,
     linear-gradient(90deg, #d1c39f 0%, #acac92 100%);
   border-color: #cec0a0 #dacba9 #978d75 #c4b698;
   min-width: 138px;
@@ -150,7 +149,7 @@
   }
 }
 .tab {
-  background: url("./assets/icons/tab-icon.svg") no-repeat 80% 45%,
+  background: url('./assets/icons/tab-icon.svg') no-repeat 80% 45%,
     linear-gradient(90deg, #d1c39f 0%, #acac92 100%);
 
   border-color: #cec0a0 #dacba9 #978d75 #c4b698;
@@ -162,7 +161,7 @@
   min-width: 114px;
 }
 .enter {
-  background: url("./assets/icons/enter_icon.svg") no-repeat 20%,
+  background: url('./assets/icons/enter_icon.svg') no-repeat 20%,
     linear-gradient(90deg, #d1c39f 0%, #acac92 100%);
 
   border-color: #cec0a0 #dacba9 #978d75 #c4b698;
@@ -176,14 +175,14 @@
   }
 }
 .shift-left {
-  background: url("./assets/icons/shift-icon.svg") no-repeat 90% 45%,
+  background: url('./assets/icons/shift-icon.svg') no-repeat 90% 45%,
     linear-gradient(90deg, #d1c39f 0%, #acac92 100%);
 
   border-color: #cec0a0 #dacba9 #978d75 #c4b698;
   min-width: 138px;
 }
 .shift-right {
-  background: url("./assets/icons/shift-icon.svg") no-repeat 20% 45%,
+  background: url('./assets/icons/shift-icon.svg') no-repeat 20% 45%,
     linear-gradient(90deg, #d1c39f 0%, #acac92 100%);
   border-color: #cec0a0 #dacba9 #978d75 #c4b698;
   min-width: 138px;
@@ -206,25 +205,25 @@
   min-width: 334px;
 }
 .down {
-  background: url("./assets/icons/down-arrow.svg") no-repeat center,
+  background: url('./assets/icons/down-arrow.svg') no-repeat center,
     linear-gradient(90deg, #d1c39f 0%, #acac92 100%);
 
   border-color: #cec0a0 #dacba9 #978d75 #c4b698;
 }
 .up {
-  background: url("./assets/icons/up-arrow.svg") no-repeat center,
+  background: url('./assets/icons/up-arrow.svg') no-repeat center,
     linear-gradient(90deg, #d1c39f 0%, #acac92 100%);
 
   border-color: #cec0a0 #dacba9 #978d75 #c4b698;
 }
 .left {
-  background: url("./assets/icons/left-arrow.svg") no-repeat center,
+  background: url('./assets/icons/left-arrow.svg') no-repeat center,
     linear-gradient(90deg, #d1c39f 0%, #acac92 100%);
 
   border-color: #cec0a0 #dacba9 #978d75 #c4b698;
 }
 .right {
-  background: url("./assets/icons/right-arrow.svg") no-repeat center,
+  background: url('./assets/icons/right-arrow.svg') no-repeat center,
     linear-gradient(90deg, #d1c39f 0%, #acac92 100%);
 
   border-color: #cec0a0 #dacba9 #978d75 #c4b698;
