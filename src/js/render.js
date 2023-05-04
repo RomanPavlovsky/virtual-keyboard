@@ -1,20 +1,48 @@
 import keys from './keys.js';
 
 const render = () => {
-  // document.body.innerHTML = `
-  
-  // <div class="screen">
-  // <div class="screen__wrapper">
-  //   <textarea class="textarea" cols="10" rows="5" ></textarea>
-  //   <div class="info">
-  //   <div>
-  //   Windows OS
-  //   </div>
-  //   <div>swap language: Ctrl + Alt</div>
-  // </div>
-  // </div>
-  // </div>
-  // <div class="keyboard"><div class="keyboard__wrapper"></div></div>`;
+  document.body.innerHTML = `<section class="section-up">
+  <div class="speakers">
+    <div class="speakers__panel">
+    </div>
+    <div class="speakers__footer"></div>
+  </div>
+  <div class="screen">
+    <div class="screen__wrapper">
+      <div class="screen__container">
+        <textarea class="textarea" cols="10" rows="5"></textarea>
+        <div class="os-info">
+          Windows OS
+        </div>
+        <div class="screen__light"></div>
+        <div class="screen__button-wrapper">
+          <div class="screen__button"></div>
+        </div>
+      </div>
+    </div>
+    <div class="screen__footer"></div>
+  </div>
+  <div class="speakers">
+    <div class="speakers__panel">
+      <div class="speakers__light"></div>
+      <div class="speakers__power"></div>
+    </div>
+    <div class="speakers__footer"></div>
+  </div>
+</section>
+<section class="section-down">
+  <div class="keyboard">
+    <div class="keyboard__wrapper"></div>
+  </div>
+  <div class="mouse">
+    <div class="mouse__buttons">
+      <div class="mouse__left"></div>
+      <div class="mouse__middle"></div>
+      <div class="mouse__right"></div>
+    </div>
+  </div>
+</section>`;
+
   const keyBoard = document.querySelector('.keyboard__wrapper');
   class KeyBtn {
     constructor(obj) {

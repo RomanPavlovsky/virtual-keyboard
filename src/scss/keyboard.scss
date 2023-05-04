@@ -1,17 +1,28 @@
 .keyboard {
+  position: relative;
+  left: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 900px;
   height: 340px;
-  border-radius: 15px;
-  background-color: #d1cdc4;
-  border-bottom: 10px solid #a39f97;
+  background-color: #d9d7d0;
   border-width: 3px 7px 10px;
   border-style: solid;
   border-radius: 15px;
   border-color: #d1cdc4 #d1cdc4 #c5c4bb #d8d5cb;
   box-shadow: 5px 13px 33px 12px rgba(34, 60, 80, 0.33);
+  &::after {
+    content: "For swap language press Ctrl + Alt";
+    position: absolute;
+    bottom: 2px;
+    left: 20px;
+    font-size: 12px;
+    color: #555;
+    font-style: italic;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+  }
   &__wrapper {
     display: flex;
     flex-wrap: wrap;

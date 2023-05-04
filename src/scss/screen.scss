@@ -48,6 +48,7 @@
       background-color: #555;
     }
     &__button {
+      opacity: 0.92;
       border-radius: 50%;
       width: 31px;
       height: 31px;
@@ -57,16 +58,17 @@
       box-shadow: 0px 0px 1px 1px #555;
       
       &:hover {
-        animation: pickDown 0.2s linear 1;
-        animation-fill-mode: both;
-          @keyframes pickDown {
-          from {
-              transform: scale3d(1, 1, 1);
-              }
-            to {
-            transform: scale3d(0.95, 0.95, 0.95);
-          }
-          }
+        opacity: 1;
+        // animation: pickDown 0.2s linear 1;
+        // animation-fill-mode: both;
+        //   @keyframes pickDown {
+        //   from {
+        //       transform: scale3d(1, 1, 1);
+        //       }
+        //     to {
+        //     transform: scale3d(0.95, 0.95, 0.95);
+        //   }
+        //   }
         }
     }
     &__footer{
@@ -85,19 +87,19 @@
 
 
 .os-info {
-  
-  width: 200px;
-  height: 200px;
-  background: url("./assets/icons/win.png") no-repeat center;
-  background-size: contain;
-  background-size: 100%;
+  // background: url("./assets/icons/win.png") no-repeat center;
+  // background-size: contain;
+  // background-size: 100%;
   position: absolute;
+  font-size: 18px;
+  bottom: 15px;
+  left: 300px;
+  font-family: "Work Sans", sans-serif;
+  color: #555;
 
-  // top: 3px;
-  // right: -16px;
-  // bottom: 5px;
-  // left: 300px;
-
+  font-style: italic;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
   
 }
 .textarea {
