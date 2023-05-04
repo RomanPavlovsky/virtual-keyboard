@@ -244,15 +244,3 @@
     }
   }
 }
-.key_down {
-  animation: pick 0.2s linear 1;
-  animation-fill-mode: both;
-  @keyframes pickDown {
-    from {
-      transform: scale3d(0.95, 0.95, 0.95);
-    }
-    to {
-      transform: scale3d(1, 1, 1);
-    }
-  }
-}

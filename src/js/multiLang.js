@@ -4,10 +4,10 @@ const multiLang = () => {
   const keyboard = document.querySelector('.keyboard');
   const lettersKeys = document.querySelectorAll('[data-type="letters"]');
   const multiSymbolsKeys = document.querySelectorAll(
-    '[data-type="multi-symbols"]',
+    '[data-type="multi-symbols"]'
   );
   const multiLettersKeys = document.querySelectorAll(
-    '[data-type="multi-letters"]',
+    '[data-type="multi-letters"]'
   );
   let keysCombination = [];
   const reRender = (language) => {
@@ -62,12 +62,20 @@ const multiLang = () => {
   };
   const checkCombination = () => {
     if (keysCombination.length === 2) {
-      if ((keysCombination.includes('ControlLeft') && keysCombination.includes('AltLeft'))
-        || (keysCombination.includes('ControlLeft') && keysCombination.includes('AltRight'))) {
+      if (
+        (keysCombination.includes('ControlLeft') &&
+          keysCombination.includes('AltLeft')) ||
+        (keysCombination.includes('ControlLeft') &&
+          keysCombination.includes('AltRight'))
+      ) {
         return true;
       }
-      if ((keysCombination.includes('ControlRight') && keysCombination.includes('AltLeft'))
-        || (keysCombination.includes('ControlRight') && keysCombination.includes('AltRight'))) {
+      if (
+        (keysCombination.includes('ControlRight') &&
+          keysCombination.includes('AltLeft')) ||
+        (keysCombination.includes('ControlRight') &&
+          keysCombination.includes('AltRight'))
+      ) {
         return true;
       }
       return false;
@@ -78,7 +86,7 @@ const multiLang = () => {
     setTimeout(() => {
       if (document.querySelector('.ctrl-left').classList.contains('key_up')) {
         keysCombination = keysCombination.filter(
-          (elem) => elem === 'ControlLeft',
+          (elem) => elem === 'ControlLeft'
         );
       }
       if (document.querySelector('.alt-left').classList.contains('key_up')) {
@@ -86,21 +94,21 @@ const multiLang = () => {
       }
       if (document.querySelector('.ctrl-right').classList.contains('key_up')) {
         keysCombination = keysCombination.filter(
-          (elem) => elem === 'ControlRight',
+          (elem) => elem === 'ControlRight'
         );
       }
       if (document.querySelector('.alt-right').classList.contains('key_up')) {
         keysCombination = keysCombination.filter((elem) => elem === 'AltRight');
       }
       if (
-        document.querySelector('.ctrl-left').classList.contains('key_up')
-          === false
-        && document.querySelector('.alt-left').classList.contains('key_up')
-          === false
-        && document.querySelector('.ctrl-right').classList.contains('key_up')
-          === false
-        && document.querySelector('.alt-right').classList.contains('key_up')
-          === false
+        document.querySelector('.ctrl-left').classList.contains('key_up') ===
+          false &&
+        document.querySelector('.alt-left').classList.contains('key_up') ===
+          false &&
+        document.querySelector('.ctrl-right').classList.contains('key_up') ===
+          false &&
+        document.querySelector('.alt-right').classList.contains('key_up') ===
+          false
       ) {
         keysCombination = [];
       }
@@ -108,19 +116,19 @@ const multiLang = () => {
   };
   document.addEventListener('keydown', (event) => {
     event.preventDefault();
-    event.stopPropagation();
+
     if (
-      event.code === 'ControlLeft'
-      || event.code === 'ControlRight'
-      || event.code === 'AltRight'
-      || event.code === 'AltLeft'
+      event.code === 'ControlLeft' ||
+      event.code === 'ControlRight' ||
+      event.code === 'AltRight' ||
+      event.code === 'AltLeft'
     ) {
       keysCombination.push(event.code);
     }
   });
   document.addEventListener('keyup', (event) => {
     event.preventDefault();
-    event.stopPropagation();
+
     if (checkCombination()) {
       swapLang();
     }
@@ -128,7 +136,6 @@ const multiLang = () => {
   });
   keyboard.addEventListener('mousedown', (event) => {
     event.preventDefault();
-    event.stopPropagation();
     if (event.target.closest('.ctrl-left')) {
       keysCombination.push('ControlLeft');
     }
