@@ -26,8 +26,8 @@ const render = () => {
   </div>
   <div class="speakers">
     <div class="speakers__panel">
-      <div class="speakers__light speakers__light_active"></div>
-      <div class="speakers__power speakers__power_active"></div>
+      <div class="speakers__light speakers__light_inactive"></div>
+      <div class="speakers__power speakers__power_inactive"></div>
     </div>
     <div class="speakers__footer"></div>
   </div>

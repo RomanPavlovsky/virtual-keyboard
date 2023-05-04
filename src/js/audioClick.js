@@ -11,7 +11,8 @@ const audioClick = () => {
   };
   const audioButton = document.querySelector('.speakers__power');
   const speakerLight = document.querySelector('.speakers__light');
-  let isAudio = true;
+  let isAudio = false;
+  audio.muted = true;
   audioButton.addEventListener('click', () => {
     if (isAudio === false) {
       isAudio = true;
@@ -30,12 +31,14 @@ const audioClick = () => {
     }
   });
   keyboard.addEventListener('mouseup', (event) => {
-    if (event.target.closest('.key')) {
+    if (event.target.closest('.key') && isAudio === true) {
       play();
     }
   });
   document.addEventListener('keyup', () => {
-    play();
+    if (isAudio === true) {
+      play();
+    }
   });
 };
 export default audioClick;
