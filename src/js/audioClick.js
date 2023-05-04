@@ -1,8 +1,8 @@
-import { keyAudio } from '..';
+import keyAudio from '../assets/audio/pressKey.mp3';
 
 const audioClick = () => {
   const keyboard = document.querySelector('.keyboard__wrapper');
-  let audio = new Audio();
+  const audio = new Audio();
   audio.src = keyAudio;
   const play = async () => {
     if (audio.play() !== undefined) {

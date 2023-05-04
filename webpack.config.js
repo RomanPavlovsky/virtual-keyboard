@@ -4,7 +4,11 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FileManagerPlugin = require("filemanager-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  // entry: "./src/index.js", 
+  entry :{
+    app: "./src/index.js",
+    modules: ["./src/js/audioClick"]
+},
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index.[contenthash].js",
