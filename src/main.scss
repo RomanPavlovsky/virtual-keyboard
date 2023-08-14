@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap");
-@import "./scss/utils/mixins.scss";
-@import "./scss/keyboard.scss";
-@import "./scss/screen.scss";
-@import "./scss/speakers.scss";
-@import "./scss/mouse.scss";
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap');
+@import './scss/utils/mixins.scss';
+@import './scss/keyboard.scss';
+@import './scss/monitor.scss';
+@import './scss/speakers.scss';
+@import './scss/mouse.scss';
 
 body {
   background: linear-gradient(90deg, #d8a933 0%, #858536 100%);
@@ -14,6 +14,7 @@ body {
   justify-content: center;
   align-items: center;
   row-gap: 68px;
+  user-select: none;
 }
 .section-up {
   display: flex;
@@ -26,6 +27,4 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-

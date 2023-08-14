@@ -1,7 +1,7 @@
 const keys = [
   {
     code: 'Backquote',
-    type: 'multi-letters',
+    type: 'mixLetter',
     name: {
       en: {
         1: '~',
@@ -13,10 +13,10 @@ const keys = [
       },
     },
   },
-  { code: 'Digit1', type: 'symbols', name: { 1: '!', 2: '1' } },
+  { code: 'Digit1', type: 'symbol', name: { 1: '!', 2: '1' } },
   {
     code: 'Digit2',
-    type: 'multi-symbols',
+    type: 'mixSymbol',
     name: {
       en: {
         1: '@',
@@ -30,7 +30,7 @@ const keys = [
   },
   {
     code: 'Digit3',
-    type: 'multi-symbols',
+    type: 'mixSymbol',
     name: {
       en: {
         1: '#',
@@ -44,7 +44,7 @@ const keys = [
   },
   {
     code: 'Digit4',
-    type: 'multi-symbols',
+    type: 'mixSymbol',
     name: {
       en: {
         1: '$',
@@ -56,10 +56,10 @@ const keys = [
       },
     },
   },
-  { code: 'Digit5', type: 'symbols', name: { 1: '%', 2: '5' } },
+  { code: 'Digit5', type: 'symbol', name: { 1: '%', 2: '5' } },
   {
     code: 'Digit6',
-    type: 'multi-symbols',
+    type: 'mixSymbol',
     name: {
       en: {
         1: '^',
@@ -73,7 +73,7 @@ const keys = [
   },
   {
     code: 'Digit7',
-    type: 'multi-symbols',
+    type: 'mixSymbol',
     name: {
       en: {
         1: '&',
@@ -85,27 +85,27 @@ const keys = [
       },
     },
   },
-  { code: 'Digit8', type: 'symbols', name: { 1: '*', 2: '8' } },
-  { code: 'Digit9', type: 'symbols', name: { 1: '(', 2: '9' } },
-  { code: 'Digit0', type: 'symbols', name: { 1: ')', 2: '0' } },
-  { code: 'Minus', type: 'symbols', name: { 1: '_', 2: '-' } },
-  { code: 'Equal', type: 'symbols', name: { 1: '+', 2: '=' } },
+  { code: 'Digit8', type: 'symbol', name: { 1: '*', 2: '8' } },
+  { code: 'Digit9', type: 'symbol', name: { 1: '(', 2: '9' } },
+  { code: 'Digit0', type: 'symbol', name: { 1: ')', 2: '0' } },
+  { code: 'Minus', type: 'symbol', name: { 1: '_', 2: '-' } },
+  { code: 'Equal', type: 'symbol', name: { 1: '+', 2: '=' } },
   { code: 'Backspace', type: 'backspace', name: 'Backspace' },
   { code: 'Tab', type: 'tab', name: 'Tab' },
-  { code: 'KeyQ', type: 'letters', name: { en: 'q', ru: 'й' } },
-  { code: 'KeyW', type: 'letters', name: { en: 'w', ru: 'ц' } },
-  { code: 'KeyE', type: 'letters', name: { en: 'e', ru: 'у' } },
-  { code: 'KeyR', type: 'letters', name: { en: 'r', ru: 'к' } },
-  { code: 'KeyT', type: 'letters', name: { en: 't', ru: 'е' } },
-  { code: 'KeyY', type: 'letters', name: { en: 'y', ru: 'н' } },
-  { code: 'KeyU', type: 'letters', name: { en: 'u', ru: 'г' } },
-  { code: 'KeyI', type: 'letters', name: { en: 'i', ru: 'ш' } },
-  { code: 'KeyO', type: 'letters', name: { en: 'o', ru: 'щ' } },
-  { code: 'KeyP', type: 'letters', name: { en: 'p', ru: 'з' } },
+  { code: 'KeyQ', type: 'simpleLetter', name: { en: 'q', ru: 'й' } },
+  { code: 'KeyW', type: 'simpleLetter', name: { en: 'w', ru: 'ц' } },
+  { code: 'KeyE', type: 'simpleLetter', name: { en: 'e', ru: 'у' } },
+  { code: 'KeyR', type: 'simpleLetter', name: { en: 'r', ru: 'к' } },
+  { code: 'KeyT', type: 'simpleLetter', name: { en: 't', ru: 'е' } },
+  { code: 'KeyY', type: 'simpleLetter', name: { en: 'y', ru: 'н' } },
+  { code: 'KeyU', type: 'simpleLetter', name: { en: 'u', ru: 'г' } },
+  { code: 'KeyI', type: 'simpleLetter', name: { en: 'i', ru: 'ш' } },
+  { code: 'KeyO', type: 'simpleLetter', name: { en: 'o', ru: 'щ' } },
+  { code: 'KeyP', type: 'simpleLetter', name: { en: 'p', ru: 'з' } },
 
   {
     code: 'BracketLeft',
-    type: 'multi-letters',
+    type: 'mixLetter',
     name: {
       en: {
         1: '{',
@@ -120,7 +120,7 @@ const keys = [
 
   {
     code: 'BracketRight',
-    type: 'multi-letters',
+    type: 'mixLetter',
     name: {
       en: {
         1: '}',
@@ -134,7 +134,7 @@ const keys = [
   },
   {
     code: 'Backslash',
-    type: 'multi-symbols',
+    type: 'mixSymbol',
     name: {
       en: {
         1: '|',
@@ -148,19 +148,19 @@ const keys = [
   },
   { code: 'Delete', type: 'del', name: 'Del' },
   { code: 'CapsLock', type: 'caps', name: 'CapsLock' },
-  { code: 'KeyA', type: 'letters', name: { en: 'a', ru: 'ф' } },
-  { code: 'KeyS', type: 'letters', name: { en: 's', ru: 'ы' } },
-  { code: 'KeyD', type: 'letters', name: { en: 'd', ru: 'в' } },
-  { code: 'KeyF', type: 'letters', name: { en: 'f', ru: 'а' } },
-  { code: 'KeyG', type: 'letters', name: { en: 'g', ru: 'п' } },
-  { code: 'KeyH', type: 'letters', name: { en: 'h', ru: 'р' } },
-  { code: 'KeyJ', type: 'letters', name: { en: 'j', ru: 'о' } },
-  { code: 'KeyK', type: 'letters', name: { en: 'k', ru: 'л' } },
-  { code: 'KeyL', type: 'letters', name: { en: 'l', ru: 'д' } },
+  { code: 'KeyA', type: 'simpleLetter', name: { en: 'a', ru: 'ф' } },
+  { code: 'KeyS', type: 'simpleLetter', name: { en: 's', ru: 'ы' } },
+  { code: 'KeyD', type: 'simpleLetter', name: { en: 'd', ru: 'в' } },
+  { code: 'KeyF', type: 'simpleLetter', name: { en: 'f', ru: 'а' } },
+  { code: 'KeyG', type: 'simpleLetter', name: { en: 'g', ru: 'п' } },
+  { code: 'KeyH', type: 'simpleLetter', name: { en: 'h', ru: 'р' } },
+  { code: 'KeyJ', type: 'simpleLetter', name: { en: 'j', ru: 'о' } },
+  { code: 'KeyK', type: 'simpleLetter', name: { en: 'k', ru: 'л' } },
+  { code: 'KeyL', type: 'simpleLetter', name: { en: 'l', ru: 'д' } },
 
   {
     code: 'Semicolon',
-    type: 'multi-letters',
+    type: 'mixLetter',
     name: {
       en: {
         1: ':',
@@ -174,7 +174,7 @@ const keys = [
   },
   {
     code: 'Quote',
-    type: 'multi-letters',
+    type: 'mixLetter',
     name: {
       en: {
         1: '"',
@@ -189,16 +189,16 @@ const keys = [
 
   { code: 'Enter', type: 'enter', name: 'Enter' },
   { code: 'ShiftLeft', type: 'shift-left', name: 'Shift' },
-  { code: 'KeyZ', type: 'letters', name: { en: 'z', ru: 'я' } },
-  { code: 'KeyX', type: 'letters', name: { en: 'x', ru: 'ч' } },
-  { code: 'KeyC', type: 'letters', name: { en: 'c', ru: 'с' } },
-  { code: 'KeyV', type: 'letters', name: { en: 'v', ru: 'м' } },
-  { code: 'KeyB', type: 'letters', name: { en: 'b', ru: 'и' } },
-  { code: 'KeyN', type: 'letters', name: { en: 'n', ru: 'т' } },
-  { code: 'KeyM', type: 'letters', name: { en: 'm', ru: 'ь' } },
+  { code: 'KeyZ', type: 'simpleLetter', name: { en: 'z', ru: 'я' } },
+  { code: 'KeyX', type: 'simpleLetter', name: { en: 'x', ru: 'ч' } },
+  { code: 'KeyC', type: 'simpleLetter', name: { en: 'c', ru: 'с' } },
+  { code: 'KeyV', type: 'simpleLetter', name: { en: 'v', ru: 'м' } },
+  { code: 'KeyB', type: 'simpleLetter', name: { en: 'b', ru: 'и' } },
+  { code: 'KeyN', type: 'simpleLetter', name: { en: 'n', ru: 'т' } },
+  { code: 'KeyM', type: 'simpleLetter', name: { en: 'm', ru: 'ь' } },
   {
     code: 'Comma',
-    type: 'multi-letters',
+    type: 'mixLetter',
     name: {
       en: {
         1: '<',
@@ -212,7 +212,7 @@ const keys = [
   },
   {
     code: 'Period',
-    type: 'multi-letters',
+    type: 'mixLetter',
     name: {
       en: {
         1: '>',
@@ -226,7 +226,7 @@ const keys = [
   },
   {
     code: 'Slash',
-    type: 'multi-symbols',
+    type: 'mixSymbol',
     name: {
       en: {
         1: '?',

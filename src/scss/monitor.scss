@@ -1,4 +1,4 @@
-.screen {
+.monitor {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
   &__container {
     position: relative;
     box-sizing: border-box;
-    padding: 50px 50px 50px;
+    padding: 50px;
     width: 100%;
     height: 100%;
     display: flex;
@@ -92,7 +92,7 @@
     border: 5px solid #c4beb2;
     background: linear-gradient(180deg, #4b4843 0%, #ece4cf 70%);
   }
-  &_load {
+  &_on {
     display: none;
     position: absolute;
     top: 65px;
@@ -103,19 +103,22 @@
     background: url('./assets/icons/windows98.jpg') no-repeat center,
       radial-gradient(circle, rgba(34, 34, 34, 1) 30%, rgb(26, 25, 25) 90%);
     background-size: cover;
-    animation: load 3s linear 1;
+    animation: load 1.5s linear 1;
     animation-fill-mode: both;
     @keyframes load {
-      from {
+      0% {
         opacity: 0;
       }
-      to {
+      50% {
+        opacity: 1;
+      }
+      100% {
         opacity: 1;
       }
     }
   }
   &_off {
-    display: none;
+    display: block;
     position: absolute;
     position: absolute;
     top: 65px;
@@ -151,9 +154,9 @@
   border-color: #a0998a #c4beb2 #ebe8e0 #c4beb2;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 6px;
   font-family: 'Courier Prime', monospace;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   background: radial-gradient(circle, #008181 30%, #016e6e 90%);
   border-radius: 5px;
