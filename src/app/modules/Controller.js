@@ -51,18 +51,13 @@ export default class Controller {
       }
       if (e.target !== lastTarget) {
         this.soundView.play();
-        console.log('lastTarget', lastTarget.id);
-        console.log('current target', e.target.id);
         if (e.target.id === 'ShiftRight' || e.target.id === 'ShiftLeft') {
-          console.log('shift');
           this.toggleShift();
         }
         if (e.target.id === 'CapsLock') {
           this.toggleCaps();
         }
         if (e.target.closest('.key')) {
-          console.log('+');
-          console.log(this.state);
           this.keyboardView.activeKey(e.target.id);
           this.screenView.inputValue(e.target.id, this.state);
           this.keyboardView.inactiveKey(lastTarget.id, this.state);
@@ -120,7 +115,6 @@ export default class Controller {
     }
   }
   keyUp(e) {
-    console.log(this.state);
     this.checkShortcut();
     e.preventDefault();
     if (this.state.isShift) {
