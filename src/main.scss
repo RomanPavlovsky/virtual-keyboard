@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap');
+@import './scss/utils/mixins.scss';
+@import './scss/keyboard.scss';
+@import './scss/monitor.scss';
+@import './scss/speakers.scss';
+@import './scss/mouse.scss';
+
+body {
+  background-color: rgb(33, 33, 33);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 68px;
+  user-select: none;
+}
+.section-up {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  column-gap: 50px;
+}
+.section-down {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

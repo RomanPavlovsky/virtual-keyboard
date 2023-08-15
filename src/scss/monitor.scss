@@ -1,0 +1,166 @@
+.monitor {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    overflow: hidden;
+    width: 680px;
+    height: 500px;
+    background: linear-gradient(45deg, #e2ddd1 0%, #cfc6b2 70%);
+    border-radius: 15px;
+  }
+  &__container {
+    position: relative;
+    box-sizing: border-box;
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__light {
+    position: absolute;
+    bottom: 20px;
+    right: 125px;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    box-sizing: border-box;
+    border: 1px solid rgb(94, 94, 94);
+    box-shadow: 0px 0px 2px 2px rgb(157, 160, 145);
+    &_active {
+      background: radial-gradient(
+        circle,
+        rgb(73, 255, 1) 20%,
+        rgb(23, 94, 1) 90%
+      );
+    }
+    &_inactive {
+      background: radial-gradient(circle, #555 20%, rgb(94, 78, 72) 90%);
+    }
+  }
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 7px;
+    right: 80px;
+    border-radius: 50%;
+    width: 31px;
+    height: 31px;
+    background-color: #555;
+    &:hover > .screen__button {
+      opacity: 1;
+      animation: screenButton 0.2s linear 1;
+      animation-fill-mode: both;
+      @keyframes screenButton {
+        from {
+          transform: scale3d(1, 1, 1);
+        }
+        to {
+          transform: scale3d(0.95, 0.95, 0.95);
+        }
+      }
+    }
+  }
+  &__button {
+    opacity: 0.92;
+    border-radius: 50%;
+    width: 31px;
+    height: 31px;
+    background: url('./assets/icons/power-bold.svg') no-repeat center,
+      radial-gradient(circle, #e2ddd1 60%, #c4beb2 70%);
+    box-sizing: border-box;
+    border: 1px solid rgb(94, 94, 94);
+    box-shadow: 0px 0px 1px 1px #555;
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: -50px;
+    z-index: -1;
+    width: 350px;
+    border-radius: 50%;
+    height: 100px;
+    box-sizing: border-box;
+    border: 5px solid #c4beb2;
+    background: linear-gradient(180deg, #4b4843 0%, #ece4cf 70%);
+  }
+  &_on {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: 65px;
+    box-sizing: border-box;
+    width: 550px;
+    height: 365px;
+    background: url('./assets/icons/windows98.jpg') no-repeat center,
+      radial-gradient(circle, rgba(34, 34, 34, 1) 30%, rgb(26, 25, 25) 90%);
+    background-size: cover;
+    animation: load 1.5s linear 1;
+    animation-fill-mode: both;
+    @keyframes load {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  }
+  &_off {
+    display: block;
+    position: absolute;
+    position: absolute;
+    top: 65px;
+    left: 65px;
+    box-sizing: border-box;
+    width: 550px;
+    height: 365px;
+    background: radial-gradient(
+      circle,
+      rgba(34, 34, 34, 1) 30%,
+      rgb(26, 25, 25) 90%
+    );
+  }
+}
+
+.os-info {
+  position: absolute;
+  font-size: 18px;
+  bottom: 15px;
+  left: 300px;
+  font-family: 'Work Sans', sans-serif;
+  color: #555;
+
+  font-style: italic;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
+}
+.textarea {
+  outline: none;
+  box-sizing: border-box;
+  border-width: 15px 15px 20px;
+  border-style: solid;
+  border-color: #a0998a #c4beb2 #ebe8e0 #c4beb2;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 6px;
+  font-family: 'Courier Prime', monospace;
+  font-size: 14px;
+  color: #fff;
+  background: radial-gradient(circle, #008181 30%, #016e6e 90%);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
